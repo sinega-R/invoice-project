@@ -1,0 +1,242 @@
+$a: 100%;
+$b:300px;
+$c:60px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+ .sidebar{       
+position: fixed;
+width: 300px;
+height: 100%;
+background: rgba(113,99,186,255);
+overflow-x: hidden;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+z-index: 2;
+
+ul li{
+ width: 100%;
+        list-style:none;
+         &:hover{
+     background:#e0e0e058;
+
+      }
+&:first-child{
+    line-height: 60px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+&:first-child:hover{
+background: none;   
+}
+    a{
+    width: 100%;
+    text-decoration: none; 
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    i{
+        min-width: 60px;
+        font-size: 24px;
+        text-align: center;
+
+    }
+    }
+}
+.title{
+    padding: 0 10px;
+    font-size: 20px;
+
+}
+
+
+}
+.sidebar:hover{
+    width: 300px;
+}
+                           
+   
+    
+}
+.main {
+    position: relative;
+    width: calc(#{$a} - #{$b});
+    min-height: 100vh;
+    left: 300px;
+    background-color: white;
+    .top-bar{
+        position: fixed;
+        height: 60px;
+        width: calc(#{$a} - #{$b});
+        width: 100%;
+        background: rgba(113,99,186,255);
+        display: grid;
+        grid-template-columns: 10fr 0.4fr 1fr;
+       grid-gap: 5px;
+       align-items: center;
+       color: #444;
+       padding: 0 20px;
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+       z-index: 1;
+       img{
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        // top:10px;
+        // left: 500px;
+
+    }
+       .search{
+        position: relative;
+        max-width: 400px;
+        display: flex;
+       
+        // input{
+        //     width: 100%;
+        //     min-width:128px;
+        //     height: 40px;
+        //     padding: 0 40px;
+        //     font-size: 16px;
+        //     outline: none;
+        //     border: none;
+        //     background: #f5f5f5;
+
+        // }
+        // i{
+        //     position: absolute;
+        //     right: 15px;
+        //     top: 10px;
+        //     cursor: pointer;
+           
+
+        // }
+      
+       }
+      
+      
+    }
+    .user{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+    
+    
+        }
+       
+    }
+   
+    .cards{
+        margin-top:60px;
+        width: 100%;
+        padding: 35px 20px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+         grid-gap: 20px;
+        
+         .card{
+            background: linear-gradient(45deg,rgba(113,99,186,255));
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+            background-color: rgba(113,99,186,255);
+            
+         }
+         .number{
+            font-size: 35px;
+            font-weight: 500;
+            color: white;
+
+         }
+         .card-name{
+            color: #444;
+            font-weight: 600;
+
+         }
+         .icon-box i{
+            font-size: 45px;
+            color: #444;
+
+         }
+      
+    }
+    
+}
+@media (max-width:1090px){
+    .container .sidebar{
+        width: 60px;
+    }
+    .main{
+        width: calc(#{$a} - #{$c});
+       
+        left:60px;
+   
+        .main .top-bar{
+        width: calc(#{$a} - #{$c});
+    }
+    .main .top-bar img{
+        width: 150px;
+        height: 80px;
+    }
+}
+
+}
+@media (max-width: 860px){
+    .main .cards{
+        width: calc(#{$a} - #{$c});
+    }
+    .main .top-bar img{
+        width: 180px;
+        height: 80px;
+    }
+
+}
+@media (max-width: 530px){
+    .main .cards{
+        grid-template-columns:1fr;
+    }
+    .main .top-bar img{
+        width: 100px;
+        height: 60px;
+    }
+
+}
+@media (max-width: 420px){
+    
+    .main .user{
+        width: 40px;
+        height: 40px;
+    }
+    .main .top-bar img{
+        width: 100px;
+        height: 60px;
+    }
+        .main .top-bar .search input{
+            padding: 0 10px;
+        }
+
+   
+    .main .cards{
+        padding: 10px;
+    }
+    
+
+}
